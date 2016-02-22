@@ -1,23 +1,30 @@
 <?php
-// Content (variables)
 $title = get_the_title();
-$category = get_the_category( $post->ID );
-$category_link = get_category_link( $category[0]->term_id );
-$content = wpautop( get_the_content() );
-$permalink = get_the_permalink();
-$date = get_the_date();
-$thumb = get_the_post_thumbnail( $post->ID, 'medium' );
+$content = wpautop( get_field('post_credits') );
+$image = get_the_post_thumbnail( $post->ID, 'large' );
+
+$width = get_field( 'post_width' );
+$width_class = 'width-' . $width;
+
+$pos = get_field( 'post_alignment' );
+$pos_class = 'pos-' . $pos;
+
+$offset = get_field( 'post_offset' );
+if( $offset < 0 ){
+  $offset_class = ' pull' . $offset;
+} else if( $offset > 0) {
+  $offset_class = ' push-' . $offset;
+} else {
+  $offset_class = '';
+}
+
+$class_section = 'project ' . $width_class . ' ' . $pos_class . $offset_class;
 ?>
 
-<li>
-  <div>
-    <a href="<?php echo $category_link; ?>" class="post-category"><?php echo $category[0]->cat_name; ?></a>
-    <a class="post-title" href="<?php echo $permalink; ?>"><h3><?php echo $title; ?></h3></a>
+<section class="<?php echo $class_section; ?>">
+  <?php echo $image; ?>
+  <div class="project-info">
+    <h2 class="is-bold"><?php echo $title; ?></h2>
+    <?php echo $content; ?>
   </div>
-
-  <?php echo $thumb; ?>
-
-  <div>
-    <p><?php echo $date; ?></p>
-  </div>
-</li>
+</section>

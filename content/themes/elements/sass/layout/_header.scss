@@ -1,17 +1,23 @@
 body > header{
   @include flexbox;
-  @include align-items( center );
-  @include justify-content( space-between );
+  @include flex-direction( row );
+  @include justify-content( center );
 
-  position: fixed;
-  z-index: $zIndex-header;
+  h1:first-child{
+    padding-right: 25px;
 
-  width: 100%;
-  height: $header-height;
+    text-align: right;
+  }
 
-  background-color: $grey-light;
+  h1:last-child{
+    padding-left: 25px;
 
-  .link-logo{
-    width: 50px;
+    text-align: left;
+
+    p{
+      padding-top: 25px;
+
+      text-indent: 5px;
+    }
   }
 }

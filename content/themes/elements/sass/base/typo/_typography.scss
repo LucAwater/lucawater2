@@ -1,8 +1,8 @@
 %base{
-  @include opensans;
+  @include gotham;
 
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 400;
 
   a{
     font-size: 1em;
@@ -12,19 +12,28 @@
 h1{
   @extend %base;
 
-  font-size: 3em;
+  font-size: 3rem;
+  font-weight: 300;
 }
 
 h2{
   @extend h1;
 
-  font-size: 2em;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+h1, h2{
+  p{
+    font-size: .9rem;
+  }
 }
 
 p{
   @extend %base;
 
   font-size: .9em;
+  line-height: 1.6;
 }
 
 a{

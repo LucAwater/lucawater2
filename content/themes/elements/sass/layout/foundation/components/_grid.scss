@@ -32,7 +32,7 @@ $total-columns: 12 !default;
 
 // For creating container, nested, and collapsed rows.
 //
-// 
+//
 // $behavior - Any special beavior for this row? Default: false. Options: nest, collapse, nest-collapse, false.
 @mixin grid-row($behavior: false) {
 
@@ -85,13 +85,13 @@ $total-columns: 12 !default;
 // $collapse - Get rid of gutter padding on column? Default: false.
 // $float - Should this float? Default: true. Options: true, false, left, right.
 @mixin grid-column(
-  $columns:false, 
-  $last-column:false, 
-  $center:false, 
-  $offset:false, 
-  $push:false, 
-  $pull:false, 
-  $collapse:false, 
+  $columns:false,
+  $last-column:false,
+  $center:false,
+  $offset:false,
+  $push:false,
+  $pull:false,
+  $collapse:false,
   $float:true) {
 
   position: relative;
@@ -143,15 +143,6 @@ $total-columns: 12 !default;
 //
 // $size - Name of class to use, i.e. "large" will generate .large-1, .large-2, etc.
 @mixin grid-html-classes($size) {
-
-  @for $i from 1 through $total-columns - 1 {
-    .#{$size}-push#{-$i} {
-      @include grid-column($push:$i, $collapse:null, $float:false);
-    }
-    .#{$size}-pull#{-$i} {
-      @include grid-column($pull:$i, $collapse:null, $float:false);
-    }
-  }
 
   .column,
   .columns { @include grid-column($columns:false); }
@@ -211,15 +202,6 @@ $total-columns: 12 !default;
 
     @media #{$medium-up} {
       @include grid-html-classes($size:m);
-      // Old push and pull classes
-      @for $i from 1 through $total-columns - 1 {
-        .push#{-$i} {
-          @include grid-column($push:$i, $collapse:null, $float:false);
-        }
-        .pull#{-$i} {
-          @include grid-column($pull:$i, $collapse:null, $float:false);
-        }
-      }
     }
     @media #{$large-up} {
       @include grid-html-classes($size:l);

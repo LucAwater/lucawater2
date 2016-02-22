@@ -1,39 +1,15 @@
-header,
-footer{
-  padding: 0 $space-sides;
+header{
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
 }
 
-main{
-  padding-top: $header-height;
+header{
+  padding: 200px 25px 100px;
 }
 
 main > *{
-  padding: ($space-section / 2) $space-sides;
-
-  &:first-child{
-    padding-top: $space-section;
-  }
-
-  &:last-child{
-    padding-bottom: $space-section;
-  }
-}
-
-@media #{$small-only}{
-  header,
-  footer{
-    padding: 0 $space-sides-small;
-  }
-
-  main > *{
-    padding: $space-section-small $space-sides-small;
-
-    &:first-child{
-      padding-top: $space-section-small;
-    }
-
-    &:last-child{
-      padding-bottom: $space-section-small;
-    }
-  }
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 25px;
 }

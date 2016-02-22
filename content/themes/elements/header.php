@@ -27,6 +27,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Fonts from typography.com -->
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6711094/6669152/css/fonts.css" />
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
 
@@ -37,21 +40,8 @@
 <body <?php body_class(); ?>>
   <!-- Header -->
   <header>
-    <a class="link-logo" href="<?php echo home_url(); ?>">
-      <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
-    </a>
-
-    <nav>
-      <?php
-      $nav = array(
-        'theme_location'  => 'menu_primary',
-        'container'       => '',
-        'items_wrap'      => '<ul>%3$s</ul>'
-      );
-
-      wp_nav_menu( $nav );
-      ?>
-    </nav>
+    <h1 class="is-bold">Luc Awater</h1>
+    <h1>digital product<br>designer + developer<p>more information and contact details <a>here</a></p></h1>
   </header>
 
   <!-- Main content -->
